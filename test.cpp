@@ -55,11 +55,6 @@ int main(int argc, char** argv) {
     //     cout << it->size() <<endl; //*.==->解应用
     // }
 
-    int a = 1;
-    int c = 2;
-    int &&rval = 20;
-    int d = a+c;
-    int *b = &a;
-    cout<<*b;
-
+    vector<int> path{1,2};
+    cout<<path.size()<<endl;
 }
