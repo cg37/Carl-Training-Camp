@@ -6,18 +6,18 @@ public:
         sort(nums.begin(),nums.end());
         for(int k=0; k < nums.size(); k++) {
 
-            if(nums[k] > target && nums[k] >= 0) {
+            if(nums[k] > target && nums[k] >= 0) {  //剪枝
                 break;
             }
-            if(k > 0 && nums[k] == nums[k-1]) {
+            if(k > 0 && nums[k] == nums[k-1]) {     //去重
                 continue;
             }
             for(int i = k+1; i < nums.size(); i++) {
                 if (nums[k] + nums[i] >= 0 && nums[k] + nums[i] > target) {
-                    break;
+                    break; // 剪枝
                 }
                 if(i > k + 1 && nums[i] == nums[i - 1]) {
-                    continue;
+                    continue; // 去重
                 }
                 int left = i + 1;
                 int right = nums.size() - 1;
