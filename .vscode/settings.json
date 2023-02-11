@@ -48,6 +48,8 @@
         "xutility": "cpp",
         "xhash": "cpp",
         "list": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "algorithm": "cpp",
+        "unordered_set": "cpp"
     }
 }
