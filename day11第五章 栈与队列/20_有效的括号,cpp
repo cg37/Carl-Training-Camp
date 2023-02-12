@@ -1,0 +1,19 @@
+#include "head.h"
+
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<int> sd;
+        if (s.size % 2 != 0) {
+            return false;
+        }  
+        for (int i = 0; i < s.size()) {
+            if(s[i] == '(') sd.push(')')
+            else if (s[i] == '{') sd.push('}');
+            else if(s[i] == '[') sd.push(']')
+            else if (sd.top != s[i] || sd.empty()) return false;
+            else (sd.pop());
+            }
+        return sd.empty();
+        }
+};
