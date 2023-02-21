@@ -10,6 +10,19 @@ struct TreeNode {
 class Solution {
 public:
     int sumOfLeftLeaves(TreeNode* root) {
-        
+        stack<TreeNode*> st;
+        if(root == NULL) return 0;
+        st.push(root);
+        int res = 0;
+        while(!st.empty()) {
+            TreeNode* node = st.top();
+            st.pop();
+            if(node->left != NULL && node->left->left==NULL && node->left->right == NULL){
+                res = res + node->left->val;
+            }
+            if(node->right) st.push(node->right);
+            if(node->left) st.push(node->left);
+        }
+        return res;
     }
 };
