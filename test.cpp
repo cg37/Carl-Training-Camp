@@ -1,14 +1,21 @@
 #include "head.h"
-
-template <typename T>
-T add(T a, T b) {
-    return a + b;
-}
-int main() {
-    string a = "hello";
-    string b = " world";
-    cout<<add(1,2)<<endl;
-    cout<<add(a, b)<<endl;
-    cout<<add(1.2, 2.0)<<endl;
+class Solution
+{
+private:
+    static bool cmp(int a, int b) {
+        return abs(a) > abs(b);
+    }
+public:
+    vector<int> numssort(vector<int> nums){
+        sort(nums.begin(), nums.end(), cmp);
+        return nums;
+    }
+};
+int main(){
+    vector<int> nums{-1, -2, -3, 0 ,1 ,2 ,3};
+    nums = Solution().numssort(nums);
+    for (int i=0; i < nums.size(); i++) {
+        cout<<nums[i]<<endl;
+    }
 }
 
