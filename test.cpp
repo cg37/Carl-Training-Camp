@@ -1,21 +1,30 @@
 #include "head.h"
-class Solution
-{
-private:
-    static bool cmp(int a, int b) {
-        return abs(a) > abs(b);
-    }
-public:
-    vector<int> numssort(vector<int> nums){
-        sort(nums.begin(), nums.end(), cmp);
-        return nums;
-    }
-};
-int main(){
-    vector<int> nums{-1, -2, -3, 0 ,1 ,2 ,3};
-    nums = Solution().numssort(nums);
-    for (int i=0; i < nums.size(); i++) {
-        cout<<nums[i]<<endl;
-    }
+
+void trimLeftTrailingSpaces(std::string &input) { //  去除左边空格
+    input.erase(    
+                    input.begin(),
+                    find_if (
+                                input.begin(),
+                                input.end(),
+                                [](int ch) {return !isspace(ch);}
+                        )
+    );
+}
+//isspace 空格, tab(\t),whitespaces (\n, \v, \f, \r) ;返回非空值
+//
+
+std::vector<int> stringToIntegerVector(std::string input) {
+    std::vector<int> output;
+    trimLeftTrailingSpaces(input);            //删除左开头空格
+    input = input.substr(1,input.length()-2); //去除 首尾符号[]
+    return output;
 }
 
+int main(){
+    std::string line = "012345678";
+    while (std::getline(std::cin, line)){
+        std::vector<int> bills = stringToIntegerVector(line);
+        line = line.substr(1,line.length()-2);
+    }
+    std::cout<<line<<std::endl;
+}

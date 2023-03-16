@@ -1,20 +1,23 @@
 #include <iostream>
-#include <string>
-#include <fstream>
-#include <sstream>
-
 #include <vector>
+#include <unordered_set>
+#include <unordered_map>
+#include <string>
+#include <algorithm>
+#include <queue>
+#include <stack>
+#include <sstream>
 using namespace std;
 
 class Solution {
 public:
-    int search(vector<int>& nums, int target) { //å·¦é—­å‹é—­
+    int search(vector<int>& nums, int target) { //×ó±ÕÓÑ±Õ
         int left = 0;
-        int right = nums.size()-1; //å·¦é—­å‹é—­
+        int right = nums.size()-1; //×ó±ÕÓÑ±Õ
         while (left <= right) {
             int middle = (left + right) / 2;
             if (nums[middle] > target) {
-                right = middle - 1; //é—­åŒºé—´
+                right = middle - 1; //±ÕÇø¼ä
             }
             else if (nums[middle] < target) {
                 left = middle + 1;

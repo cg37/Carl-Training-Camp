@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.txt": "plaintext",
         "iosfwd": "cpp",
         "string": "cpp",
         "xstring": "cpp",
@@ -56,6 +57,16 @@
         "ranges": "cpp",
         "span": "cpp",
         "stack": "cpp",
-        "654_最大二叉树": "cpp"
+        "654_最大二叉树": "cpp",
+        "array": "cpp",
+        "*.tcc": "cpp",
+        "cstdarg": "cpp",
+        "cwctype": "cpp",
+        "functional": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "random": "cpp",
+        "string_view": "cpp",
+        "numbers": "cpp"
     }
 }
